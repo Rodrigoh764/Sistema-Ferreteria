@@ -32,7 +32,7 @@ echo $id_empleado;
 
 <body>
     <button id="boton">presion el boton</button>
-
+    <div id="obj1">Bloque de texto</div>
 </body>
 
 </html>
