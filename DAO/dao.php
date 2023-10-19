@@ -2,16 +2,16 @@
 
 class DAO
 {
-    public function conectarBD()
-    {
-        $servidor = "localhost";
-        $nombreBD = "ferreteria";
-        $usuario = "root";
-        $contraseña = "";
+    // public function conectarBD()
+    // {
+    //     $servidor = "localhost";
+    //     $nombreBD = "ferreteria";
+    //     $usuario = "root";
+    //     $contraseña = "";
 
-        $conexion = mysqli_connect($servidor, $usuario, $contraseña, $nombreBD);
-        return $conexion;
-    }
+    //     $conexion = mysqli_connect($servidor, $usuario, $contraseña, $nombreBD);
+    //     return $conexion;
+    // }
 
     public function AgregarPersonal($Nombre, $ApellidoP, $ApellidoM, $Fecha, $Telefono, $PuestoEmpleado, $Sueldo)
     {
