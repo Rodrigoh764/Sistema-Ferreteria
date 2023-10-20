@@ -1,8 +1,7 @@
 <?php
-
-include("../BD/conexion.php");
-
-$conectar = $conec;
+include("../modelo/Persona.php");
+include("../DAO/dao.php");
+include("../modelo/Empleado.php");
 
 $nombre = $_POST["nombre"];
 $apellidoP = $_POST["apellidoP"];
@@ -12,11 +11,9 @@ $fecha = $_POST["fecha"];
 $puesto = $_POST["puesto"];
 $sueldo = $_POST["sueldo"];
 
-$producto = "INSERT INTO empleados(Nombre, ApellidoP, ApellidoM, FechaNac, Telefono, PuestoEmpleado, Sueldo 
-) VALUES('$nombre', '$apellidoP', '$apellidoM', '$fecha', '$telefono', '$puesto', '$sueldo')";
 
-$resultado = mysqli_query($conectar, $producto);
+$dao = new DAO();
 
-if ($resultado) {
-    include("../vista/exito.php");
-}
+$empleado = new Empleado($nombre, $apellidoP, $apellidoM, $fecha, $telefono, $puesto, $sueldo);
+
+$dao->AgregarPersonal($nombre, $apellidoP, $apellidoM, $fecha, $telefono, $puesto, $sueldo);

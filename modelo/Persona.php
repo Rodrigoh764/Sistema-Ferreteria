@@ -54,23 +54,24 @@ class Persona
     }
 
     //CREACION DE LOS MÉTODOS DE LA CLASE
-    function agregar()
-    {
-        echo $this->nombre;
-    }
 
-    function modificar($nombre)
-    {
-    }
+    // POSIBLE MENTE NO SE HAGA USO DE ESTOS MÉTODOS
+    // function agregar()
+    // {
+    // }
 
-    function eliminar($nombre)
-    {
-    }
+    // function modificar($nombre)
+    // {
+    // }
 
-    function consultar($nombre)
-    {
-    }
-    function validaTelefono($nombre)
-    {
-    }
+    // function eliminar($nombre)
+    // {
+    // }
+
+    // function consultar($nombre)
+    // {
+    // }
+    // function validaTelefono($nombre)
+    // {
+    // }
 }
