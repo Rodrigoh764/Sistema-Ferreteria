@@ -1,6 +1,5 @@
 <?php
-
-class DAO
+Class DAO
 {
 
     // POR EL MOMENTO HAGO LA CONEXION DE BD DE ESTA MANERA YA QUE AUN NO ENCUENTRO LA 
@@ -13,18 +12,23 @@ class DAO
 
     public function AgregarPersonal($Nombre, $ApellidoP, $ApellidoM, $Fecha, $Telefono, $PuestoEmpleado, $Sueldo)
     {
-
         $conexion = mysqli_connect($this->servidor, $this->usuario, $this->contraseña, $this->nombreBD);
         $producto = "INSERT INTO empleados(Nombre, ApellidoP, ApellidoM, FechaNac, Telefono, PuestoEmpleado, Sueldo 
         ) VALUES('$Nombre', '$ApellidoP', '$ApellidoM', '$Fecha', '$Telefono', '$PuestoEmpleado', '$Sueldo')";
 
         $resultado = mysqli_query($conexion, $producto);
         if ($resultado) {
-            header("Location: http://localhost/Sistema-Ferreteria-Marly/vista/exito.php");
+            session_start();
+            $_SESSION['exito'] = 'El registro fue guardado de manera exitosa';
+            header("Location: http://localhost/Sistema-Ferreteria-Marly/index.php");
         }
     }
 
-    public function Eliminar()
+    public function mostrarDatos()
     {
+        $conexion = mysqli_connect($this->servidor, $this->usuario, $this->contraseña, $this->nombreBD);
+        $_Leer_SQL = "SELECT * FROM empleados";
+        $_Lectura = mysqli_query($conexion, $_Leer_SQL);
+        return $_Lectura;
     }
 }

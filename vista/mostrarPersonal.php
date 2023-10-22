@@ -1,8 +1,10 @@
 <?php
 
-include("../controlador/mostrar.php");
+include("../DAO/dao.php");
 
-$lectura = mostrarDatos();
+$datos = new DAO();
+
+$lectura = $datos->mostrarDatos();
 
 ?>
 <!DOCTYPE html>

@@ -8,14 +8,11 @@ class Persona
 
     public function __construct($nombre, $apellidoP, $apellidoM, $fechaNac)
     {
-
         $this->nombre = $nombre;
         $this->apellidoP = $apellidoP;
         $this->apellidoM = $apellidoM;
         $this->fechaNac = $fechaNac;
     }
-
-    //CREACION DE LOS GETTER Y SETTER
 
     public function setNombre($nombre)
     {
@@ -46,32 +43,11 @@ class Persona
 
     public function setFechaNac($fechaNac)
     {
+
         $this->fechaNac = $fechaNac;
     }
     public function getFechaNac()
     {
         return $this->fechaNac;
     }
-
-    //CREACION DE LOS MÉTODOS DE LA CLASE
-
-    // POSIBLE MENTE NO SE HAGA USO DE ESTOS MÉTODOS
-    // function agregar()
-    // {
-    // }
-
-    // function modificar($nombre)
-    // {
-    // }
-
-    // function eliminar($nombre)
-    // {
-    // }
-
-    // function consultar($nombre)
-    // {
-    // }
-    // function validaTelefono($nombre)
-    // {
-    // }
 }

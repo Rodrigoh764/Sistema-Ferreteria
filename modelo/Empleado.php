@@ -7,8 +7,6 @@ class Empleado extends Persona
     private $puesto;
     private $sueldo;
 
-
-
     public function __construct($nombre, $apellidoP, $apellidoM, $fechaNac, $telefono, $puesto, $sueldo)
     {
         parent::__construct($nombre, $apellidoP, $apellidoM, $fechaNac);
@@ -17,21 +15,42 @@ class Empleado extends Persona
         $this->sueldo = $sueldo;
     }
 
-    public function validaDatos()
-    {
-    }
-
-    // VALIDAMOS EL TELEFONO
-    public function setTelefono()
+    public function validaTelefono()
     {
         $regex = '/(55)[ -]*([0-9][ -]*){8}$/';
         if (preg_match($regex, $this->telefono)) {
-            echo 'El texto es válido';
             $this->telefono = $this->telefono;
+            return true;
         } else {
-            echo 'El texto NO es válido';
+            return false;
         }
     }
+
+    public function validaFechaNac()
+    {
+        date_default_timezone_set('America/Mexico_City');
+
+        $fechaActual = date("Y-m-j");
+
+        $años = strtotime('-18 year', strtotime($fechaActual));
+
+        $nuevafecha = date('Y-m-j', $años);
+        if ($nuevafecha >= $this->getFechaNac()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function validaSueldo()
+    {
+        if ($this->getSueldo() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function getTelefono()
     {
         return $this->telefono;
@@ -46,23 +65,9 @@ class Empleado extends Persona
         return $this->puesto;
     }
 
-    public function setSueldo($sueldo)
-    {
-        $this->sueldo = $sueldo;
-    }
+
     public function getSueldo()
     {
         return $this->sueldo;
     }
-
-
-
-
-    // function agregar()
-    // {
-    //     include("../DAO/dao.php");
-    //     $dao = new DAO();
-    //     $dao->AgregarPersonal($this->getNombre(), $this->getApellidoP(), $this->getApellidoP(), $this->getFechaNac(), $this->getTelefono(), $this->getPuesto(), $this->getSueldo());
-    //     echo "verificando el nombre" . $this->getNombre();
-    // }
 }
