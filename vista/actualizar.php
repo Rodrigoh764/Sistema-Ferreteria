@@ -61,7 +61,7 @@ $lectura = $datos->mostrarDatosIndividual($id);
 
                         <td>
                            
-                        <a href="../index.php" class="btn btn-danger btn-lg " tabindex="-1" role="button" aria-disabled="true" id="btnEliminar" >Eliminar</a>
+                        <a class="btn btn-danger btn-lg " tabindex="-1" role="button" aria-disabled="true" id="btnEliminar" >Eliminar</a>
 
                         </td>
                     </tr>

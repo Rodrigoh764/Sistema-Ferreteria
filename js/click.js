@@ -42,24 +42,24 @@ $btnOcultar.addEventListener("click", () => {
 //     }
 
     // btneliminar.addEventListener("click", () => {
-    //     // animacionEliminar();
-    //     // Swal.fire({
-    //     //   title: 'Seguro que quiere eliminar este registro?',
-    //     //   text: "Una vez eliminado no podra recuperar la información!",
-    //     //   icon: 'warning',
-    //     //   showCancelButton: true,
-    //     //   confirmButtonColor: '#3085d6',
-    //     //   cancelButtonColor: '#d33',
-    //     //   confirmButtonText: 'Si,eliminar registro!'
-    //     // }).then((result) => {
-    //     //   if (result.isConfirmed) {
-    //     //     Swal.fire(
-    //     //       'Registro eliminado!',
-    //     //       'Se elimino de manera exitosa.',
-    //     //       'success'
-    //     //     ) 
-    //     //   }
-    //     // })
+        // animacionEliminar();
+        // Swal.fire({
+        //   title: 'Seguro que quiere eliminar este registro?',
+        //   text: "Una vez eliminado no podra recuperar la información!",
+        //   icon: 'warning',
+        //   showCancelButton: true,
+        //   confirmButtonColor: '#3085d6',
+        //   cancelButtonColor: '#d33',
+        //   confirmButtonText: 'Si,eliminar registro!'
+        // }).then((result) => {
+        //   if (result.isConfirmed) {
+        //     Swal.fire(
+        //       'Registro eliminado!',
+        //       'Se elimino de manera exitosa.',
+        //       'success'
+        //     ) 
+        //   }
+        // })
        
     // });
 
