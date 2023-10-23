@@ -1,4 +1,6 @@
 <?php
+ session_start();
+
 
 include("../DAO/dao.php");
 
@@ -15,6 +17,7 @@ $lectura = $datos->mostrarDatos();
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <title>Personal</title>
 </head>
@@ -23,6 +26,21 @@ $lectura = $datos->mostrarDatos();
     <center>
         <h1>Trabajadores</h1>
     </center>
+    <?php
+    if (isset($_SESSION['exitoUpdate'])) {
+    ?>
+    <script>
+
+    Swal.fire(
+        'Exito!',
+        '<?php echo $_SESSION['exitoUpdate'];?>',
+        'success'
+    )
+    </script>
+    <?php
+        unset($_SESSION['exitoUpdate']);
+    }
+    ?>
     <table class="table" style="background: #E1efc6;">
         <thead>
             <tr>
@@ -33,7 +51,7 @@ $lectura = $datos->mostrarDatos();
                 <th scope="col">Telefono</th>
                 <th scope="col">Puesto Asignado</th>
                 <th scope="col">Sueldo</th>
-               
+                <th scope="col">Option</th>
             </tr>
         </thead>
         <tbody>
@@ -47,9 +65,11 @@ $lectura = $datos->mostrarDatos();
                 <td><?php echo $registro["FechaNac"]; ?></td>
                 <td><?php echo $registro["Telefono"]; ?></td>
                 <td><?php echo $registro["PuestoEmpleado"]; ?></td>
-                <td>$<?php echo $registro["Sueldo"]; ?></td>
-
-               
+                <td><?php echo $registro["Sueldo"]; ?></td>
+             
+                <td><a href="actualizar.php?id_empleado=<?php echo $registro["ID_Empleado"]; ?>"
+                        class="btn btn-danger btn-lg " tabindex="-1" role="button" aria-disabled="true">Actualizar</a>
+                </td>
             </tr>
 
         </tbody>
@@ -57,8 +77,7 @@ $lectura = $datos->mostrarDatos();
             }
     ?>
     </table>
-    <center> <a href="ActualizarEliminar.php" class="btn btn-danger btn-lg " tabindex="-1" role="button" aria-disabled="true">Actualizar</a>
-    </center>
+
 </body>
 
 </html>

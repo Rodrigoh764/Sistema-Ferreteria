@@ -1,19 +1,18 @@
+<?php
+session_start();
 
+$id = $_SESSION['usuarioid'];
 
-<!DOCTYPE html>
-<html lang="en">
+$nombre = $_POST["nombre"];
+$apellidoP = $_POST["apellidoP"];
+$apellidoM = $_POST["apellidoM"];
+$telefono =  $_POST["telefono"];
+$fecha = $_POST["fecha"];
+$puesto = $_POST["puesto"];
+$sueldo = $_POST["sueldo"];
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+include("../DAO/dao.php");
 
-<body>
-    <button id="boton">presion el boton</button>
-    <div id="obj1">Bloque de texto</div>
-</body>
+$dao = new DAO();
 
-</html>
-
-<script src="../js/click.js"></script>
+$dao->ActualizarPersonal($id,$nombre,$apellidoP,$apellidoM,$fecha,$telefono,$puesto,$sueldo);
