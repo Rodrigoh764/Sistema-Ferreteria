@@ -24,6 +24,20 @@ Class DAO
         }
     }
 
+    public function ActualizarPersonal($id,$Nombre, $ApellidoP, $ApellidoM, $Fecha, $Telefono, $PuestoEmpleado, $Sueldo)
+    {
+        $conexion = mysqli_connect($this->servidor, $this->usuario, $this->contraseña, $this->nombreBD);
+        $producto = "UPDATE empleados SET Nombre = '$Nombre', ApellidoP = '$ApellidoP', ApellidoM = '$ApellidoM', FechaNac = '$Fecha', Telefono = '$Telefono', Sueldo = '$Sueldo' where  ID_Empleado = '$id'";
+        // $producto = "UPDATE empleados SET Nombre = '$Nombre', ApellidoP = '$ApellidoP', ApellidoM = '$ApellidoM', FechaNac = '$Fecha', Telefono = '$Telefono', PuestoEmpleado = '$PuestoEmpleado', Sueldo = '$Sueldo' where  ID_Empleado = '$id'";
+
+        $resultado = mysqli_query($conexion, $producto);
+        if ($resultado) {
+            session_start();
+            $_SESSION['exitoUpdate'] = 'El registro fue actualizado de manera exitosa';
+            header("Location: http://localhost/Sistema-Ferreteria-Marly/vista/ActualizarEliminar.php");
+        }
+    }
+
     public function mostrarDatos()
     {
         $conexion = mysqli_connect($this->servidor, $this->usuario, $this->contraseña, $this->nombreBD);
@@ -31,4 +45,15 @@ Class DAO
         $_Lectura = mysqli_query($conexion, $_Leer_SQL);
         return $_Lectura;
     }
+
+
+    public function mostrarDatosIndividual($id_Empleado)
+    {
+        $conexion = mysqli_connect($this->servidor, $this->usuario, $this->contraseña, $this->nombreBD);
+        $_Leer_SQL =  "SELECT * FROM empleados where ID_Empleado = '$id_Empleado'";
+        $_Lectura = mysqli_query($conexion, $_Leer_SQL);
+        return $_Lectura;
+    }
+
+
 }

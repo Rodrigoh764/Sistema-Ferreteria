@@ -1,6 +1,24 @@
-// Swal.fire({
-//     icon: 'error',
-//     title: 'ERROR',
-//     text: 'Verifique el número telefonico',
-//     footer: '<a href="controlador/insert.php"></a>'
-// })
+const btnEliminar = document.getElementById("btnEliminar");
+
+btnEliminar.addEventListener("click", (e) => {
+	console.log("mensaje");
+
+    Swal.fire({
+        title: 'Seguro que quiere eliminar este registro?',
+        text: "Una vez eliminado no podra recuperar la información!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si,eliminar registro!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Registro eliminado!',
+            'Se elimino de manera exitosa.',
+            'success'
+          ) 
+        }
+      })
+    
+});
