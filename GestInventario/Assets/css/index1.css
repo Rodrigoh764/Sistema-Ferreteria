@@ -1,0 +1,33 @@
+body {
+    background-image: url("../Img/FondoIndex1.2.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;  
+    background-position: center center;
+    background-attachment: fixed; 
+}
+
+/*Opciones*/
+.row {
+    padding-top: 2%;
+}
+
+.row .card {
+    margin: 5%;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 21.5px;
+    font-weight: 900;
+    background: none;
+}
+
+.row .col .card {
+    width: 18rem;
+    border: 0;
+}
+
+.row .col .card img {
+    width: 110px;
+    height: 110px;
+    align-self: center;
+}
