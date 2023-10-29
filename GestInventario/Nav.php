@@ -17,7 +17,7 @@
                         Clientes
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Consultar Clientes</a></li>
+                        <li><a class="dropdown-item" href="">Consultar Clientes</a></li>
                         <li><a class="dropdown-item" href="#">Consultar Facturas</a></li>
                     </ul>
                 </li>
@@ -56,9 +56,9 @@
                         Inventario
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="">Agregar Producto</a></li>
-                        <li><a class="dropdown-item" href="">Modificar Producto</a></li>
-                        <li><a class="dropdown-item" href="">Consultar Inventario</a></li>
+                        <li><a class="dropdown-item" href="Vista/AgregarProductos.php">Agregar Producto</a></li>
+                        <li><a class="dropdown-item" href="Vista/InventarioModificar.php">Modificar Producto</a></li>
+                        <li><a class="dropdown-item" href="Vista/MostrarInventario.php">Consultar Inventario</a></li>
                     </ul>
                 </li>
             </ul>

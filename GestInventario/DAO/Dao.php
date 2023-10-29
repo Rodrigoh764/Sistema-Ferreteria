@@ -17,7 +17,7 @@ class DAO
         if ($resultado) {
             session_start();
             $_SESSION['exito'] = 'El producto se registro de manera exitosa';
-            header("Location: http://localhost/Sistema-Ferreteria/index.php");
+            header("Location: http://localhost/Sistema-Ferreteria-Marly/GestInventario/index.php");
         }
     }
 
@@ -48,7 +48,7 @@ class DAO
         if ($resultado) {
             session_start();
             $_SESSION['exitoUpdate'] = 'El producto fue actualizado de manera exitosa';
-            header("Location: http://localhost/Sistema-Ferreteria/Vista/InventarioModificar.php");
+            header("Location: http://localhost/Sistema-Ferreteria-Marly/GestInventario/Vista/InventarioModificar.php");
         }
     }
 
@@ -59,8 +59,9 @@ class DAO
         $resultado = mysqli_query($conexion, $_Leer_SQL);
         if ($resultado) {
             session_start();
+            //http://localhost/Sistema-Ferreteria-Marly/GestInventario/Vista/InventarioModificar.php
             $_SESSION['exitoDelete'] = 'El producto fue eliminado de manera exitosa';
-            header("Location: http://localhost/Sistema-Ferreteria/Vista/InventarioModificar.php");
+            header("Location: http://localhost/Sistema-Ferreteria-Marly/GestInventario/Vista/InventarioModificar.php");
         }
     }
 }
