@@ -1,0 +1,26 @@
+/*Tabla agregar productos*/
+.container {
+    background-color: #536050;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: aliceblue;
+    padding: 1rem 4rem 0rem;
+    border-radius: 35px;
+}
+
+/*Mostrar productos*/
+.table-responsive {
+    background: none;
+    border-radius: 25px;
+    padding: 1rem 2rem 0rem;
+}
+
+/* Total productos */
+.row {
+    background-color: #cecece; 
+    width: 80%;
+    align-self: center;
+}
+
+span {
+    color: crimson;
+}
