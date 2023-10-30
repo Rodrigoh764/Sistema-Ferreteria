@@ -22,7 +22,8 @@ btnEliminar.addEventListener("click", (e) => {
           if (result.value) {
              
             setTimeout(() => {
-              location.href ='http://localhost/Sistema-Ferreteria-Marly/controlador/delete.php';
+              console.log("dentro de la url")
+              location.href ='http://localhost/Sistema-Ferreteria-Marly/GestPersonal/controlador/delete.php';
             }, "3000");
                     console.log("*se elimina la venta*");
                 } else {

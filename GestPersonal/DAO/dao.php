@@ -20,7 +20,7 @@ Class DAO
         if ($resultado) {
             session_start();
             $_SESSION['exito'] = 'El registro fue guardado de manera exitosa';
-            header("Location: http://localhost/Sistema-Ferreteria-Marly/index.php");
+            header("Location: http://localhost/Sistema-Ferreteria-Marly/Login/inicio.php");
         }
     }
 
@@ -33,7 +33,7 @@ Class DAO
         if ($resultado) {
             session_start();
             $_SESSION['exitoUpdate'] = 'El registro fue actualizado de manera exitosa';
-            header("Location: http://localhost/Sistema-Ferreteria-Marly/vista/ActualizarEliminar.php");
+            header("Location: http://localhost/Sistema-Ferreteria-Marly/GestPersonal/vista/ActualizarEliminar.php");
         }
     }
 
@@ -59,7 +59,10 @@ Class DAO
         $_Leer_SQL = "DELETE FROM empleados WHERE ID_Empleado = '$id_Empleado'";
         $resultado = mysqli_query($conexion, $_Leer_SQL);
         if ($resultado) {
-            header("Location: http://localhost/Sistema-Ferreteria-Marly/vista/ActualizarEliminar.php");
+            echo "dentro de dao eliminar";
+            header("Location: http://localhost/Sistema-Ferreteria-Marly/GestPersonal/vista/ActualizarEliminar.php");
+             }else{
+            echo "error";
         }
     }
 

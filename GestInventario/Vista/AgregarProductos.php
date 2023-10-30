@@ -23,7 +23,7 @@
         unset($_SESSION['error']);
     }
     ?>
-    <?php include '../Nav.php' ?>
+    <?php include "../navInd.php" ?>
     <h1 class="text-center">Agregar producto nuevo</h1>
     <div class="container">
         <form action="../Controlador/Insertar.php" method="POST" enctype="multipart/form-data">

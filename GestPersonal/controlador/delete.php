@@ -1,5 +1,5 @@
 <?php
-
+// echo "controlador";
 include("../DAO/dao.php");
 
 session_start();

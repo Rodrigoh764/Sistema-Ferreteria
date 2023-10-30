@@ -17,7 +17,7 @@ class DAO
         if ($resultado) {
             session_start();
             $_SESSION['exito'] = 'El producto se registro de manera exitosa';
-            header("Location: http://localhost/Sistema-Ferreteria-Marly/GestInventario/index.php");
+            header("Location: http://localhost/Sistema-Ferreteria-Marly/Login/inicio.php");
         }
     }
 

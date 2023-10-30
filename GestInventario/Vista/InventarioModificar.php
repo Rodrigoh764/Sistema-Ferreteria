@@ -58,7 +58,7 @@ $lectura = $datos->mostrarProductos();
     }
     ?>
     
-    <?php include '../Nav.php'; ?>
+    <?php include "../navInd.php" ?>
     <h1 class="text-center">Modificar Productos</h1>
     <hr>
     <div class="table-responsive">

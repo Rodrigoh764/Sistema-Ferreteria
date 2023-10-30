@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 include '../DAO/Dao.php';
 $datos = new DAO();
 $lectura = $datos->mostrarProductos();
@@ -11,7 +11,7 @@ $lectura = $datos->mostrarProductos();
 </head>
 
 <body>
-    <?php include '../Nav.php';
+<?php include "../navInd.php";
     $cantidad = mysqli_num_rows($lectura);
     ?>
     <h1 class="text-center">Inventario de productos</h1>
