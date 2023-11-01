@@ -11,6 +11,7 @@ $lectura = $datos->mostrarDatos();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="../Assets/css/Productos1.css">
 
 <head>
 
@@ -40,7 +41,9 @@ include ("../navIndPersona.php");
         unset($_SESSION['exitoUpdate']);
     }
     ?>
-    <table class="table" style="background: #E1efc6;">
+     <div class="table-responsive">
+     <table class="table table-dark table-sm table-striped table-hover table align-middle">
+
         <thead>
             <tr>
                 <th scope="col">Nombre</th>
@@ -76,7 +79,7 @@ include ("../navIndPersona.php");
             }
     ?>
     </table>
-
+    </div>
 </body>
 
 </html>

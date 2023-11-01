@@ -29,20 +29,21 @@ if (isset($_SESSION['error'])) {
 }
 ?>
 
-<div class="m-5 p-5 mt-0 pt-0 ">
+<div class="m-5 p-5 mt-0 pt-o ">
 
     <!--    NOS DIRIGIMOS AL CONTROLADOR DONDE SE HARA LA COMUNICACION ENTRE EL CONTROLLER Y LA CLASE -->
     <form action="../controlador/insert.php" method="POST" enctype="multipart/form-data">
 
-        <div class="mb-4 ">
+        <div class="mb-4">
 
-            <label class="form-label">Nombre</label>
-            <input type="text" class="form-control" name="nombre" required>
+            <label class="form-label " >Nombre</label>
+            <input type="text" class="form-control " name="nombre" required>
+          
 
         </div>
 
         <div class="mb-4">
-            <label class="form-label">Apellido Paterno</label>
+        <label class="form-label">Apellido Paterno</label>
             <input type="text" class="form-control" name="apellidoP" required>
 
         </div>

@@ -71,7 +71,7 @@
                         ?> <i class="fa-solid fa-user fa-2xl"></i>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="controlador/controlador_cerrar_sesion.php">Cerrar sesión</a></li>
+                        <li><a class="dropdown-item" href="../../Login/controlador/controlador_cerrar_sesion.php">Cerrar sesión</a></li>
                     </ul>
                 </li>
             </ul>

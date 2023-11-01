@@ -30,15 +30,6 @@ class DAO
     }
 
     
-
-    /* public function mostrarProductoIndividual($claveProducto)
-    {
-        $conexion = mysqli_connect($this->servidor, $this->usuario, $this->contraseña, $this->nombreBD);
-        $_Leer_SQL =  "SELECT * FROM productos WHERE Clave = '$claveProducto'";
-        $_Lectura = mysqli_query($conexion, $_Leer_SQL);
-        return $_Lectura;
-    } */
-
     public function actualizarProducto($id, $nombreProducto, $categoria, $marca, $precio, $stock, $descripcion, $garantia)
     {
         $conexion = mysqli_connect($this->servidor, $this->usuario, $this->contraseña, $this->nombreBD);

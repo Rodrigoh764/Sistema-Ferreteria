@@ -18,6 +18,7 @@ $empleado = new Empleado($nombre, $apellidoP, $apellidoM, $fecha, $telefono, $pu
 if ($empleado->validaTelefono() == 1) {
     if ($empleado->validaFechaNac() == 1) {
         if ($empleado->validaSueldo() == 1) {
+            
             $dao->AgregarPersonal($nombre, $apellidoP, $apellidoM, $fecha, $telefono, $puesto, $sueldo);
         } else {
             session_start();
