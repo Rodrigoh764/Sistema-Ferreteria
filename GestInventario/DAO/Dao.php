@@ -2,7 +2,6 @@
 
 class DAO
 {
-    //Conexion BD
     private $servidor = "localhost";
     private $nombreBD = "ferreteria";
     private $usuario = "root";
@@ -17,19 +16,21 @@ class DAO
         if ($resultado) {
             session_start();
             $_SESSION['exito'] = 'El producto se registro de manera exitosa';
-            header("Location: http://localhost/Sistema-Ferreteria-Marly/Login/inicio.php");
+            header("Location: http://localhost/Sistema-Ferreteria/Login/inicio.php");
         }
     }
 
     public function mostrarProductos()
     {
         $conexion = mysqli_connect($this->servidor, $this->usuario, $this->contraseña, $this->nombreBD);
-        $_Leer_SQL = "SELECT * FROM productos";
+        /* $_Leer_SQL = "SELECT * FROM productos";
         $_Lectura = mysqli_query($conexion, $_Leer_SQL);
-        return $_Lectura;
+        return $_Lectura; */
+        return $conexion;
     }
 
     
+
     public function actualizarProducto($id, $nombreProducto, $categoria, $marca, $precio, $stock, $descripcion, $garantia)
     {
         $conexion = mysqli_connect($this->servidor, $this->usuario, $this->contraseña, $this->nombreBD);
@@ -39,7 +40,7 @@ class DAO
         if ($resultado) {
             session_start();
             $_SESSION['exitoUpdate'] = 'El producto fue actualizado de manera exitosa';
-            header("Location: http://localhost/Sistema-Ferreteria-Marly/GestInventario/Vista/InventarioModificar.php");
+            header("Location: http://localhost/Sistema-Ferreteria/GestInventario/Vista/InventarioModificar.php");
         }
     }
 
@@ -50,9 +51,8 @@ class DAO
         $resultado = mysqli_query($conexion, $_Leer_SQL);
         if ($resultado) {
             session_start();
-            //http://localhost/Sistema-Ferreteria-Marly/GestInventario/Vista/InventarioModificar.php
             $_SESSION['exitoDelete'] = 'El producto fue eliminado de manera exitosa';
-            header("Location: http://localhost/Sistema-Ferreteria-Marly/GestInventario/Vista/InventarioModificar.php");
+            header("Location: http://localhost/Sistema-Ferreteria/GestInventario/Vista/InventarioModificar.php");
         }
     }
 }

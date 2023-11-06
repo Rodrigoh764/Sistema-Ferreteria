@@ -9,14 +9,17 @@ $lectura = $datos->mostrarDatos();
 <html lang="en">
 
 <head>
-    <title>Personal</title>
+    <title>Modificar Personal</title>
     <link rel="icon" href="../Assets/Img/LOGO.jpg">
-    <link rel="stylesheet" href="../Assets/css/Productos1.css">
+<link rel="stylesheet" href="../Assets/css/Productos1.css">
 </head>
 
-<body style="background-color: #e0e2e4;">
-    <?php include("../navIndPersona.php"); ?>
-    <h1 class="text-center">Trabajadores</h1>
+<body style="background: #e0e2e4;">
+    <?php
+    include("../navIndPersona.php");
+    include("../alertas.php");
+    ?>
+    <h1 class="text-center">Modificar Trabajadores</h1>
     <div class="table-responsive">
         <table class="table table-dark table-sm table-striped table-hover table align-middle">
             <thead>
@@ -28,6 +31,7 @@ $lectura = $datos->mostrarDatos();
                     <th scope="col">Teléfono</th>
                     <th scope="col">Puesto Asignado</th>
                     <th scope="col">Sueldo</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -35,18 +39,27 @@ $lectura = $datos->mostrarDatos();
                 while ($registro = mysqli_fetch_array($lectura)) {
                 ?>
                     <tr>
+                        <td hidden><?php echo $registro["ID_Empleado"]; ?></td>
                         <td><?php echo $registro["Nombre"]; ?></td>
                         <td><?php echo $registro["ApellidoP"]; ?></td>
                         <td><?php echo $registro["ApellidoM"]; ?></td>
                         <td><?php echo $registro["FechaNac"]; ?></td>
                         <td><?php echo $registro["Telefono"]; ?></td>
+                        <td hidden><?php echo $registro["PuestoEmpleado"]; ?></td>
                         <td><?php echo $registro["Puesto"]; ?></td>
-                        <td>$<?php echo $registro["Sueldo"]; ?></td>
+                        <td><?php echo $registro["Sueldo"]; ?></td>
+                        <td>
+                            <button type="button" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalModiTrab<?php echo $registro["ID_Empleado"]; ?>">
+                                <i class="fa-solid fa-pen-to-square"></i> Modificar
+                            </button>
+                            <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliTrab<?php echo $registro["ID_Empleado"]; ?>">
+                                <i class="fa-solid fa-trash"></i> Eliminar
+                            </button> 
+                        </td>
+                        <?php include "modalTrabajador.php"; ?>
+                    <?php } ?>
                     </tr>
             </tbody>
-        <?php
-                }
-        ?>
         </table>
     </div>
 </body>

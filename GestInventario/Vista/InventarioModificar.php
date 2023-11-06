@@ -7,58 +7,16 @@ $lectura = $datos->mostrarProductos();
 
 <head>
     <title>Modificar Productos</title>
-    <title>Inventario de productos</title>
+    <link rel="icon" href="../Assets/Img/LOGO.jpg">
     <link rel="stylesheet" href="../Assets/css/Productos1.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body>
-    <!-- Alertas -->
+<body style="background-color: #e0e2e4;">
     <?php
-    if (isset($_SESSION['error'])) {
+    include "../navInd.php";
+    include "../alertas.php";
     ?>
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: '<?php echo $_SESSION['error']; ?>',
-                footer: '<a href=""></a>'
-            })
-        </script>
-    <?php
-        unset($_SESSION['error']);
-    }
-    ?>
-    <?php
-    if (isset($_SESSION['exitoUpdate'])) {
-    ?>
-        <script>
-            Swal.fire(
-                'Éxito!',
-                '<?php echo $_SESSION['exitoUpdate']; ?>',
-                'success'
-            )
-        </script>
-    <?php
-        unset($_SESSION['exitoUpdate']);
-    }
-    ?>
-    <?php
-    if (isset($_SESSION['exitoDelete'])) {
-    ?>
-        <script>
-            Swal.fire(
-                'Éxito!',
-                '<?php echo $_SESSION['exitoDelete']; ?>',
-                'success'
-            )
-        </script>
-    <?php
-        unset($_SESSION['exitoDelete']);
-    }
-    ?>
-    
-    <?php include "../navInd.php" ?>
     <h1 class="text-center">Modificar Productos</h1>
     <hr>
     <div class="table-responsive">
@@ -81,7 +39,7 @@ $lectura = $datos->mostrarProductos();
                         <td><?php echo $mostrar['Nombre']; ?></td>
                         <td><?php echo $mostrar['Categoria']; ?></td>
                         <td><?php echo $mostrar['Marca']; ?></td>
-                        <td><?php echo $mostrar['Precio']; ?></td>
+                        <td>$<?php echo $mostrar['Precio']; ?></td>
                         <td><?php echo $mostrar['Stock']; ?></td>
                         <td hidden><?php echo $mostrar[6]; ?></td>
                         <td hidden><?php echo $mostrar['Garantia']; ?></td>

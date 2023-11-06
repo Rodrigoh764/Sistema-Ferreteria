@@ -1,26 +1,21 @@
-/*Tabla agregar productos*/
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap'); /* h1 */
+
+h1 {
+    font-family: 'Play', sans-serif;
+}
+
+/*Tabla agregar trabajadores*/
 .container {
-    background-color: #536050;
+    background-color: #011A27;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: aliceblue;
     padding: 1rem 4rem 0rem;
     border-radius: 35px;
 }
 
-/*Mostrar productos*/
+/*Mostrar trabajadores*/
 .table-responsive {
     background: none;
     border-radius: 25px;
     padding: 1rem 2rem 0rem;
-}
-
-/* Total productos */
-.row {
-    background-color: #cecece; 
-    width: 80%;
-    align-self: center;
-}
-
-span {
-    color: crimson;
 }

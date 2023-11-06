@@ -2,7 +2,6 @@
 
 class Empleado extends Persona
 {
-
     private $telefono;
     private $puesto;
     private $sueldo;
@@ -29,11 +28,8 @@ class Empleado extends Persona
     public function validaFechaNac()
     {
         date_default_timezone_set('America/Mexico_City');
-
         $fechaActual = date("Y-m-j");
-
         $años = strtotime('-18 year', strtotime($fechaActual));
-
         $nuevafecha = date('Y-m-j', $años);
         if ($nuevafecha >= $this->getFechaNac()) {
             return true;
@@ -60,11 +56,11 @@ class Empleado extends Persona
     {
         $this->puesto = $puesto;
     }
+
     public function getPuesto()
     {
         return $this->puesto;
     }
-
 
     public function getSueldo()
     {

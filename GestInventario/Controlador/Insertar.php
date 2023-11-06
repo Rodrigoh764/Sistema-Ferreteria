@@ -7,7 +7,7 @@ $categoria = $_POST['Categoria'];
 $marca = $_POST['Marca'];
 $precio = $_POST['Precio'];
 $stock = $_POST['Stock'];
-$medida =$_POST['Medicion'];
+$medida = $_POST['Medicion'];
 $descripcion = $_POST['Descripcion'];
 $garantia = $_POST['DiasGarantia'];
 $imagen = addslashes(file_get_contents($_FILES["Imagen"]["tmp_name"])); //Guarda los bits 
@@ -22,10 +22,10 @@ if ($producto->validaPrecio() == 1) {
     } else {
         session_start();
         $_SESSION['error'] = 'Verifique el Stock del producto';
-        header("Location: http://localhost/Sistema-Ferreteria/Vista/AgregarProductos.php");
+        header("Location: http://localhost/Sistema-Ferreteria/GestInventario/Vista/AgregarProductos.php");
     }
 } else {
     session_start();
     $_SESSION['error'] = 'Verifique el Precio del producto';
-    header("Location: http://localhost/Sistema-Ferreteria/Vista/AgregarProductos.php");
+    header("Location: http://localhost/Sistema-Ferreteria/GestInventario/Vista/AgregarProductos.php");
 }

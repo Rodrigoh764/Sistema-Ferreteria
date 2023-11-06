@@ -7,7 +7,7 @@ $categoria = $_POST['Categoria'];
 $marca = $_POST['Marca'];
 $precio = $_POST['Precio'];
 $stock = $_POST['Stock'];
-$garantia = $_POST['Garantia'];
+$garantia = $_POST['DiasGarantia'];
 $descripcion = $_POST['Descripcion'];
 
 $dao = new DAO();
@@ -18,11 +18,11 @@ if ($precio > 1) {
     } else {
         session_start();
         $_SESSION['error'] = 'Verifique el Stock del producto';
-        header("Location: http://localhost/Sistema-Ferreteria/Vista/InventarioModificar.php");
+        header("Location: http://localhost/Sistema-Ferreteria/GestInventario/Vista/InventarioModificar.php");
     }
 } else {
     session_start();
     $_SESSION['error'] = 'Verifique el Precio del producto';
-    header("Location: http://localhost/Sistema-Ferreteria/Vista/InventarioModificar.php");
+    header("Location: http://localhost/Sistema-Ferreteria/GestInventario/Vista/InventarioModificar.php");
 }
 

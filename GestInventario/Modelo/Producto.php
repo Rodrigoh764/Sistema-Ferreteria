@@ -41,15 +41,6 @@ class Producto
         }
     }
 
-    public function validaGarantia()
-    {
-        if ($this->getGarantia() > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public function setNombreProducto($nombreProducto)
     {
         $this->nombreProducto = $nombreProducto;

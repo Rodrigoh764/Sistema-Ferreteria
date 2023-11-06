@@ -18,6 +18,7 @@ class Persona
     {
         $this->nombre = $nombre;
     }
+
     public function getNombre()
     {
         return $this->nombre;
@@ -27,6 +28,7 @@ class Persona
     {
         $this->apellidoP = $apellidoP;
     }
+
     public function getApellidoP()
     {
         return $this->apellidoP;
@@ -36,6 +38,7 @@ class Persona
     {
         $this->apellidoM = $apellidoM;
     }
+
     public function getApellidoM()
     {
         return $this->apellidoM;
@@ -43,9 +46,9 @@ class Persona
 
     public function setFechaNac($fechaNac)
     {
-
         $this->fechaNac = $fechaNac;
     }
+
     public function getFechaNac()
     {
         return $this->fechaNac;

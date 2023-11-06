@@ -5,7 +5,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+    a {
+        font-family: 'Play', sans-serif;
+    }
+
+    .navbar {
+        background-color:#e94f08;
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="../../Login/inicio.php">Ferretería "Marley"</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,8 +70,8 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="../Vista/AgregarProductos.php">Agregar Producto</a></li>
-                        <li><a class="dropdown-item" href="../Vista/InventarioModificar.php">Modificar Producto</a></li>
                         <li><a class="dropdown-item" href="../Vista/MostrarInventario.php">Consultar Inventario</a></li>
+                        <li><a class="dropdown-item" href="../Vista/InventarioModificar.php">Modificar Producto</a></li>
                     </ul>
                 </li>
             </ul>
@@ -71,10 +83,29 @@
                         ?> <i class="fa-solid fa-user fa-2xl"></i>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="../../Login/controlador/controlador_cerrar_sesion.php">Cerrar sesión</a></li>
+                        <li><a class="dropdown-item" href="../../Login/controlador/controlador_cerrar_sesion.php" id="cerrarSesion">Cerrar sesión</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+<script>
+    document.getElementById("cerrarSesion").addEventListener("click", function(e) {
+        e.preventDefault();
+        Swal.fire({
+            title: "¿Seguro que deseas cerrar sesión?",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Cerrar sesión",
+            cancelButtonText: "Cancelar"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "../../Login/controlador/controlador_cerrar_sesion.php";
+            }
+        });
+    });
+</script>

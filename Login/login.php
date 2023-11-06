@@ -1,18 +1,19 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
    <link rel="stylesheet" href="css/bootstrap.css">
    <link rel="stylesheet" type="text/css" href="css/style.css">
    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
-   <title>LoginFerreteriaMarley</title>
-
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <title>Login-Ferreteria-Marley</title>
 </head>
 
 <body>
+   <?php include("../Login/alertaLogin.php"); ?>
    <img class="wave" src="img/wave.png">
    <div class="container">
       <div class="img">
@@ -47,9 +48,7 @@
             <div class="view">
                <div class="fas fa-eye verPassword" onclick="vista()" id="verPassword"></div>
             </div>
-
             <div class="text-center">
-
             </div>
             <input name="btningresar" class="btn" type="submit" value="INICIAR SESION">
          </form>
