@@ -11,7 +11,7 @@ $lectura = $datos->mostrarDatos();
 <head>
     <title>Modificar Personal</title>
     <link rel="icon" href="../Assets/Img/LOGO.jpg">
-<link rel="stylesheet" href="../Assets/css/Productos1.css">
+    <link rel="stylesheet" href="../Assets/css/Productos1.css">
 </head>
 
 <body style="background: #e0e2e4;">
@@ -54,7 +54,7 @@ $lectura = $datos->mostrarDatos();
                             </button>
                             <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalEliTrab<?php echo $registro["ID_Empleado"]; ?>">
                                 <i class="fa-solid fa-trash"></i> Eliminar
-                            </button> 
+                            </button>
                         </td>
                         <?php include "modalTrabajador.php"; ?>
                     <?php } ?>

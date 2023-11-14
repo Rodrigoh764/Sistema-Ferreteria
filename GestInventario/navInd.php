@@ -58,8 +58,8 @@
                         Proveedores
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Agregar Proveedor</a></li>
-                        <li><a class="dropdown-item" href="#">Consultar Proveedor</a></li>
+                        <li><a class="dropdown-item" href="../../GestProveedores/vista/addProveedor.php">Agregar Proveedor</a></li>
+                        <li><a class="dropdown-item" href="../../GestProveedores/vista/mostrarProveedores.php">Consultar Proveedor</a></li>
                         <li><a class="dropdown-item" href="#">Realizar pedido</a></li>
                         <li><a class="dropdown-item" href="#">Consultar pedidos</a></li>
                     </ul>

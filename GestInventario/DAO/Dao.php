@@ -22,14 +22,10 @@ class DAO
 
     public function mostrarProductos()
     {
+        //Solo regreso la conexion a la BD para usarla y mostrar los productos con ayuda del paginador
         $conexion = mysqli_connect($this->servidor, $this->usuario, $this->contraseña, $this->nombreBD);
-        /* $_Leer_SQL = "SELECT * FROM productos";
-        $_Lectura = mysqli_query($conexion, $_Leer_SQL);
-        return $_Lectura; */
         return $conexion;
     }
-
-    
 
     public function actualizarProducto($id, $nombreProducto, $categoria, $marca, $precio, $stock, $descripcion, $garantia)
     {
@@ -55,4 +51,16 @@ class DAO
             header("Location: http://localhost/Sistema-Ferreteria/GestInventario/Vista/InventarioModificar.php");
         }
     }
+
+    /* public function buscarProducto()
+    {
+        $conexion = mysqli_connect($this->servidor, $this->usuario, $this->contraseña, $this->nombreBD);
+        $_Leer_SQL = "SELECT * FROM productos WHERE Nombre LIKE '%" . $_GET['busqueda'] . "%' 
+                      OR Clave LIKE '%" . $_GET['busqueda'] . "%' 
+                      OR Precio LIKE '%" . $_GET['busqueda'] . "%'
+                      OR Marca LIKE '%" . $_GET['busqueda'] . "%'
+                      OR Categoria LIKE '%" . $_GET['busqueda'] . "%'";
+        $resultado = mysqli_query($conexion, $_Leer_SQL);
+        return $resultado;
+    } */
 }

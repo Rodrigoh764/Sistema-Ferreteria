@@ -17,20 +17,19 @@ if (empty($_SESSION["usuario"])) {
 </head>
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
-	/* h1 */
+	@import url('https://fonts.googleapis.com/css2?family=Play&display=swap'); /* h1 */
 
 	h1 {
 		font-family: 'Play', sans-serif;
 	}
 
 	body {
-    background-image: url("img/FondoIndex1.2.jpg"); 
-    background-repeat: no-repeat;
-    background-size: cover;  
-    background-position: center center;
-    background-attachment: fixed; 
-}
+		background-image: url("img/FondoIndex1.2.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		background-attachment: fixed;
+	}
 </style>
 
 <body>
@@ -49,21 +48,6 @@ if (empty($_SESSION["usuario"])) {
 				<td>Cantidad</td>
 				<td>Fecha</td>
 			</tr>
-			<?php
-			$sql = "select * from ventas";
-			$result = mysqli_query($conexion, $sql);
-			while ($mostrar = mysqli_fetch_array($result)) {
-			?>
-				<tr>
-					<td><?php echo $mostrar['ID_Venta'] ?></td>
-					<td><?php echo $mostrar['Cliente'] ?></td>
-					<td><?php echo $mostrar['Producto'] ?></td>
-					<td><?php echo $mostrar['Cantidad'] ?></td>
-					<td><?php echo $mostrar['Fecha'] ?></td>
-				</tr>
-			<?php
-			}
-			?>
 		</table>
 	</center>
 

@@ -50,7 +50,7 @@
             </div>
             <br>
             <center>
-                <button type="submit" class="btn btn-success text-center">Agregar producto</button>
+                <button type="submit" class="btn btn-success text-center">Agregar trabajador</button>
                 <button type="reset" class="btn btn-danger text-center">Restablecer</button>
             </center>
             <br>

@@ -30,14 +30,13 @@ $resultado = $conexion->query("SELECT * FROM productos LIMIT $inicio,$limite");
 <body style="background-color: #e0e2e4;">
     <?php include "../navInd.php"; ?>
     <h1 class="text-center">Inventario de productos</h1>
-    
-    <center>
-        <div class="row text-center">
-            <div class="col">
-                <strong>Total de productos: <span> <?php echo $totalRegistrados; ?> </span> </strong>
-            </div>
-        </div>
-    </center>
+    <div class="row text-center">
+        <strong>Total de productos: <span> <?php echo $totalRegistrados; ?> </span> </strong>
+        <form class="d-flex" action="busqueda.php" method="GET">
+            <input class="form-control me-2" type="search" placeholder="Buscar Producto" name="busqueda">
+            <button class="btn btn-outline-success" type="submit">Buscar </button>
+        </form>
+    </div>
     <div class="table-responsive">
         <table class="table table-dark table-sm table-striped table-hover table align-middle">
             <thead>

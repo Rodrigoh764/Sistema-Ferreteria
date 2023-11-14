@@ -40,9 +40,9 @@
                         Personal
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="../vista/addPersonal.php">Agregar Personal</a></li>
-                        <li><a class="dropdown-item" href="../vista/mostrarPersonal.php">Consultar Personal</a></li>
-                        <li><a class="dropdown-item" href="../vista/modificarPersonal.php">Modificar Personal</a></li>
+                        <li><a class="dropdown-item" href="../../GestPersonal/vista/addPersonal.php">Agregar Personal</a></li>
+                        <li><a class="dropdown-item" href="../../GestPersonal/vista/mostrarPersonal.php">Consultar Personal</a></li>
+                        <li><a class="dropdown-item" href="../../GestPersonal/vista/modificarPersonal.php">Modificar Personal</a></li>
                         <li><a class="dropdown-item" href="#">Realizar Pago</a></li>
                     </ul>
                 </li>
@@ -59,8 +59,8 @@
                         Proveedores
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="../../GestProveedores/vista/addProveedor.php">Agregar Proveedor</a></li>
-                        <li><a class="dropdown-item" href="../../GestProveedores/vista/mostrarProveedores.php">Consultar Proveedor</a></li>
+                        <li><a class="dropdown-item" href="../vista/addProveedor.php">Agregar Proveedor</a></li>
+                        <li><a class="dropdown-item" href="../vista/mostrarProveedores.php">Consultar Proveedor</a></li>
                         <li><a class="dropdown-item" href="#">Realizar pedido</a></li>
                         <li><a class="dropdown-item" href="#">Consultar pedidos</a></li>
                     </ul>
