@@ -2,63 +2,37 @@
 session_start();
 include '../DAO/Dao.php';
 $datos = new DAO();
-$lectura = $datos->mostrarProductos();
+$conexion = $datos->mostrarProductos();
 ?>
 
 <head>
     <title>Modificar Productos</title>
-    <title>Inventario de productos</title>
+    <link rel="icon" href="../Assets/Img/LOGO.jpg">
     <link rel="stylesheet" href="../Assets/css/Productos1.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body>
-    <!-- Alertas -->
+<?php
+//Paginador
+$registros = mysqli_query($conexion, "SELECT COUNT(*) as PRODUCTOS FROM productos");
+$resultadoRegistros = mysqli_fetch_array($registros);
+$totalRegistrados = $resultadoRegistros['PRODUCTOS'];
+$limite = 10;
+if (empty($_GET['pagina'])) {
+    $pagina = 1;
+} else {
+    $pagina = $_GET['pagina'];
+}
+$inicio = ($pagina - 1) * $limite;
+$totalPaginas = ceil($totalRegistrados / $limite);
+$resultado = $conexion->query("SELECT * FROM productos LIMIT $inicio,$limite");
+?>
+
+<body style="background-color: #e0e2e4;">
     <?php
-    if (isset($_SESSION['error'])) {
+    include "../navInd.php";
+    include "../alertas.php";
     ?>
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: '<?php echo $_SESSION['error']; ?>',
-                footer: '<a href=""></a>'
-            })
-        </script>
-    <?php
-        unset($_SESSION['error']);
-    }
-    ?>
-    <?php
-    if (isset($_SESSION['exitoUpdate'])) {
-    ?>
-        <script>
-            Swal.fire(
-                'Éxito!',
-                '<?php echo $_SESSION['exitoUpdate']; ?>',
-                'success'
-            )
-        </script>
-    <?php
-        unset($_SESSION['exitoUpdate']);
-    }
-    ?>
-    <?php
-    if (isset($_SESSION['exitoDelete'])) {
-    ?>
-        <script>
-            Swal.fire(
-                'Éxito!',
-                '<?php echo $_SESSION['exitoDelete']; ?>',
-                'success'
-            )
-        </script>
-    <?php
-        unset($_SESSION['exitoDelete']);
-    }
-    ?>
-    
-    <?php include '../Nav.php'; ?>
     <h1 class="text-center">Modificar Productos</h1>
     <hr>
     <div class="table-responsive">
@@ -74,14 +48,14 @@ $lectura = $datos->mostrarProductos();
             </thead>
             <tbody>
                 <?php
-                while ($mostrar = mysqli_fetch_array($lectura)) {
+                while ($mostrar = mysqli_fetch_array($resultado)) {
                 ?>
                     <tr>
                         <td scope="row"><?php echo $mostrar['Clave']; ?></td>
                         <td><?php echo $mostrar['Nombre']; ?></td>
                         <td><?php echo $mostrar['Categoria']; ?></td>
                         <td><?php echo $mostrar['Marca']; ?></td>
-                        <td><?php echo $mostrar['Precio']; ?></td>
+                        <td>$<?php echo $mostrar['Precio']; ?></td>
                         <td><?php echo $mostrar['Stock']; ?></td>
                         <td hidden><?php echo $mostrar[6]; ?></td>
                         <td hidden><?php echo $mostrar['Garantia']; ?></td>
@@ -100,4 +74,35 @@ $lectura = $datos->mostrarProductos();
             </tbody>
         </table>
     </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination pagination-sm justify-content-center">
+            <?php if ($pagina != 1) { ?>
+                <li class="page-item <?php echo $_GET['pagina'] <= 0 ? 'disabled' : '' ?>">
+                    <a class='page-link' href="?pagina=<?php echo $pagina - 1; ?>">Anterior</a>
+                </li>
+                <?php
+            }
+            for ($i = 1; $i <= $totalPaginas; $i++) {
+                if ($i == $pagina) { ?>
+                    <li class="page-item active">
+                        <?php echo "<a class='page-link' href='?pagina=" . $i . "'>" . $i . "</a>"; ?>
+                    </li>
+                <?php } else { ?>
+                    <li class="page-item">
+                        <?php echo "<a class='page-link' href='?pagina=" . $i . "'>" . $i . "</a>"; ?>
+                    </li>
+                <?php }
+            }
+            if ($pagina != $totalPaginas) {
+                ?>
+                <li class="page-item">
+                    <a class='page-link' href="?pagina=<?php echo $pagina + 1; ?>">Siguiente</a>
+                </li>
+            <?php
+            }
+            ?>
+        </ul>
+    </nav>
+
 </body>
