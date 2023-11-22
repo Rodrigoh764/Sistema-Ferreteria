@@ -165,16 +165,17 @@
 
 <!-- Modal Eliminar Producto -->
 <div class="modal fade" id="modalEliminar<?php echo $mostrar['Clave']; ?>" tabindex="-1" role="dialog" aria-labelledby="modalEliminarLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document" >
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <center>
-            <div class="modal-header" style="padding: 1rem;">
-                <h5 class="modal-title" id="modalEliminarLabel">¿Seguro que quiere eliminar este producto? <u style="color:red; font-style: oblique;"><?php echo $mostrar['Nombre']; ?></u></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" style="padding: 1rem;">
-                <i class="fa-solid fa-triangle-exclamation fa-2xl"></i> Una vez eliminado no podrá recuperar la información!
-            </div></center>
+                <div class="modal-header" style="padding: 1rem;">
+                    <h5 class="modal-title" id="modalEliminarLabel">¿Seguro que quiere eliminar este producto? <u style="color:red; font-style: oblique;"><?php echo $mostrar['Nombre']; ?></u></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="padding: 1rem;">
+                    <i class="fa-solid fa-triangle-exclamation fa-2xl"></i> Una vez eliminado no podrá recuperar la información!
+                </div>
+            </center>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                 <a href="../Controlador/Eliminar.php?idProducto=<?php echo $mostrar['Clave']; ?>" type="button" class="btn btn-primary">

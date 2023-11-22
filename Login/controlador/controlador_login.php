@@ -1,6 +1,4 @@
 <?php
-// session_start();
-// ! Se quito para que pudiera salir alerta denegada, aparentemente no afecta 
 
 if (!empty($_POST["btningresar"])) {
     if (!empty($_POST["usuario"]) and !empty($_POST["password"])) {

@@ -9,6 +9,7 @@ $conexion = $datos->mostrarProductos();
     <title>Inventario de productos</title>
     <link rel="icon" href="../Assets/Img/LOGO.jpg">
     <link rel="stylesheet" href="../Assets/css/Productos1.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <?php
@@ -28,7 +29,15 @@ $resultado = $conexion->query("SELECT * FROM productos LIMIT $inicio,$limite");
 ?>
 
 <body style="background-color: #e0e2e4;">
-    <?php include "../navInd.php"; ?>
+    <?php
+    //Dependiendo el usuario muestra el nav con opciones
+    if ($_SESSION['usuario'] == 'Administrador') {
+        include "../navInd.php";
+    }
+    if ($_SESSION['usuario'] == 'Vendedor') {
+        include "../../GestVentas/navIndVentas.php";
+    }
+    ?>
     <h1 class="text-center">Inventario de productos</h1>
     <hr>
     <center>
@@ -68,8 +77,8 @@ $resultado = $conexion->query("SELECT * FROM productos LIMIT $inicio,$limite");
                                 <i class="fa-solid fa-eye"></i> Ver producto
                             </button>
                         </td>
-                        <?php include "ModalProducto.php"; ?>
-                    <?php } ?>
+                    <?php include "ModalProducto.php";
+                } ?>
                     </tr>
             </tbody>
         </table>

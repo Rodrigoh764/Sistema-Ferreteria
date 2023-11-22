@@ -34,7 +34,13 @@ if (empty($_SESSION["usuario"])) {
 
 <body>
 	<?php
-	include "../Nav.php";
+	if ($_SESSION['usuario'] == 'Administrador') {
+		include "../NavAdministrador.php";
+	} 
+	if ($_SESSION['usuario'] == 'Vendedor') {
+		include "../NavVendedor.php";
+	}
+	//include "../GestPersonal/alertas.php";
 	include "../Login/alertaLogin.php";
 	?>
 	<center>
