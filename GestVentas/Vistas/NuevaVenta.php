@@ -4,11 +4,6 @@ include '../DAO/Dao.php';
 $datos = new DAO();
 $conexion = $datos->mostrarProductos();
 $fecha_actual = date("d-m-Y");
-if (!isset($_SESSION['numero_aleatorio'])) {
-    // Si no se ha asignado, generamos un nuevo número aleatorio en el rango de 1 a 100 y lo almacenamos en la sesión
-    $_SESSION['numero_aleatorio'] = rand(1000, 10000);
-}
-$numero_aleatorio = $_SESSION['numero_aleatorio'];
 ?>
 
 <head>
@@ -30,7 +25,7 @@ $numero_aleatorio = $_SESSION['numero_aleatorio'];
     ?>
     <h1 class="text-center">Orden de compra</h1>
     <div class="content">
-        <!-- <form action="../Controlador/NuevaVenta.php" method="POST" enctype="multipart/form-data"> -->
+        <form action="../Controlador/CrearVenta.php" method="POST" enctype="multipart/form-data">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-9">
@@ -100,20 +95,13 @@ $numero_aleatorio = $_SESSION['numero_aleatorio'];
                                             </div>
                                         </div>
                                         <hr>
-                                        <center>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="TipoNota" id="Nota" value="Nota">
-                                                <label class="form-check-label" for="Nota">Nota</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="TipoNota" id="NotaGarantia" value="Garantia">
+                                        <div class="container" style="padding-left: 20%;">
+                                            <h5>Requiere nota de garantía?</h5>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="TipoNota" id="NotaGarantia" value="Garantia">
                                                 <label class="form-check-label" for="NotaGarantia">Nota de garantía</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="TipoNota" id="SinNota" value="SinNota">
-                                                <label class="form-check-label" for="SinNota">Sin nota</label>
-                                            </div>
-                                        </center>
+                                        </div>
                                         <hr>
                                     </div>
                                 </div>
@@ -131,12 +119,6 @@ $numero_aleatorio = $_SESSION['numero_aleatorio'];
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="">Folio</label>
-                                                    <input class="form-control text-center" name="folio" value="<?php echo $numero_aleatorio; ?>" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
                                                     <label for="">Fecha de la compra</label>
                                                     <input class="form-control text-center" name="fecha" value="<?php echo date("d-m-Y", strtotime($fecha_actual));  ?>">
                                                 </div>
@@ -148,26 +130,25 @@ $numero_aleatorio = $_SESSION['numero_aleatorio'];
                                                     if (isset($_SESSION["venta"])) { ?>
                                                         <input class="form-control text-center" name="total" value="$<?php echo number_format($total, 2, '.', ''); ?>" disabled>
                                                     <?php
-                                                    }
-                                                    ?>
+                                                    } else { ?>
+                                                        <input class="form-control text-center" name="total" value="$0.00" disabled>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                         </div>
                                         <hr>
-                                        <div class="col-md-12">
-                                            <div class="form-group text-center">
-                                                <!-- <input class="btn btn-outline-secondary" onclick="window.location='../Controlador/Insertar.php'" type="submit" value="Generar venta" name="btnVenta"> -->
-                                                <!-- <button type="submit" class="btn btn-outline-secondary text-center">Generar venta</button> -->
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <hr>
+                <div class="container text-center">
+                    <a href="../Controlador/CancelarVenta.php" class="btn btn-outline-danger">Cancelar venta</a>
+                    <button type="submit" class="btn btn-outline-success text-center">Generar venta</button>
+                </div>
             </div>
         </form>
     </div>
-    <script src="../Assets/js/input.js"></script>
 </body>

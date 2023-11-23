@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="col">
                                     <span class="input-group-text">Precio</span>
-                                    <input type="text" class="form-control" value="$<?php echo $mostrar['Precio']; ?>">
+                                    <input type="text" class="form-control" value="$<?php echo number_format($mostrar['Precio'], 2, '.', ''); ?>">
                                 </div>
                             </div>
                             <div class="input-group mb-1">

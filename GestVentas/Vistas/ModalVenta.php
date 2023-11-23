@@ -26,24 +26,15 @@
 $registros = mysqli_query($conexion, "SELECT COUNT(*) as PRODUCTOS FROM productos");
 $resultadoRegistros = mysqli_fetch_array($registros);
 $totalRegistrados = $resultadoRegistros['PRODUCTOS'];
-
-//$registrosCliente = mysqli_query($conexion, "SELECT COUNT(*) as CLIENTES FROM clientes");
-//resultadoRegistrosCliente = mysqli_fetch_array($registrosCliente);
-//$totalRegistradosCliente = $resultadoRegistrosCliente['CLIENTES'];
-
 $limite = 7;
 if (empty($_GET['pagina'])) {
     $pagina = 1;
 } else {
     $pagina = $_GET['pagina'];
 }
-
 $inicio = ($pagina - 1) * $limite;
 $totalPaginas = ceil($totalRegistrados / $limite);
 $resultado = $conexion->query("SELECT * FROM productos LIMIT $inicio,$limite");
-
-//$totalPaginasCliente = ceil($totalRegistradosCliente / $limite);
-//$resultadoCliente = $conexion->query("SELECT * FROM clientes LIMIT $inicio,$limite");
 ?>
 
 <!-- Modal productos -->
@@ -81,7 +72,7 @@ $resultado = $conexion->query("SELECT * FROM productos LIMIT $inicio,$limite");
                                         <td>
                                             <input type="hidden" name="producto_id" value="<?php echo $mostrar['Clave']; ?>">
                                             <input type="hidden" name="stock" value="<?php echo $mostrar['Stock']; ?>">
-                                            <input type="submit" value="Seleccionar" class="btn btn-outline-warning btn-sm">
+                                            <input type="submit" value="Seleccionar" name="AgregarATabla" class="btn btn-outline-warning btn-sm">
                                         </td>
                                     </form>
                                 <?php } ?>

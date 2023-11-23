@@ -12,7 +12,7 @@
     }
 
     .navbar {
-        background-color: #4CAF50;
+        background-color: #07575b;
     }
 </style>
 
@@ -30,7 +30,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="../GestVentas/Vistas/NuevaVenta.php">Nueva venta</a></li>
-                        <li><a class="dropdown-item" href="#">Consultar Ventas</a></li>
+                        <li><a class="dropdown-item" href="../GestVentas/Vistas/MostrarVentas.php">Consultar Ventas</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">

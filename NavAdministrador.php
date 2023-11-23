@@ -46,7 +46,7 @@
                         Ventas
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Consultar Ventas</a></li>
+                        <li><a class="dropdown-item" href="../GestVentas/Vistas/MostrarVentas.php">Consultar Ventas</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">

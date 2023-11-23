@@ -49,7 +49,7 @@ $resultado = $conexion->query("SELECT * FROM productos LIMIT $inicio,$limite");
     </center>
     <div class="table-responsive">
         <table class="table table-dark table-sm table-striped table-hover table align-middle">
-            <thead>
+            <thead class="text-center">
                 <th scope="col">Clave</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Categoría</th>
@@ -63,12 +63,12 @@ $resultado = $conexion->query("SELECT * FROM productos LIMIT $inicio,$limite");
                 while ($mostrar = mysqli_fetch_array($resultado)) {
                 ?>
                     <tr>
-                        <td scope="row"><?php echo $mostrar['Clave']; ?></td>
+                        <td class="text-center" scope="row"><?php echo $mostrar['Clave']; ?></td>
                         <td><?php echo $mostrar['Nombre']; ?></td>
-                        <td><?php echo $mostrar['Categoria']; ?></td>
-                        <td><?php echo $mostrar['Marca']; ?></td>
-                        <td>$<?php echo $mostrar['Precio']; ?></td>
-                        <td><?php echo $mostrar['Stock']; ?></td>
+                        <td class="text-center"><?php echo $mostrar['Categoria']; ?></td>
+                        <td class="text-center"><?php echo $mostrar['Marca']; ?></td>
+                        <td class="text-center">$<?php echo number_format($mostrar['Precio'], 2, '.', ''); ?></td>
+                        <td class="text-center"><?php echo $mostrar['Stock']; ?></td>
                         <td hidden><?php echo $mostrar[6]; ?></td>
                         <td hidden><?php echo $mostrar['Garantia']; ?></td>
                         <td hidden><img src="data:image/png;base64,<?php echo base64_encode($mostrar['Imagen']); ?>"></td>

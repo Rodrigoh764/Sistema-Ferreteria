@@ -16,7 +16,7 @@ if (isset($_SESSION['error'])) {
     unset($_SESSION['error']);
 }
 
-/* Alerta Producto registrado */
+/* Alerta Venta registrada */
 if (isset($_SESSION['exito'])) {
 ?>
     <script>
@@ -30,20 +30,6 @@ if (isset($_SESSION['exito'])) {
     </script>
 <?php
     unset($_SESSION['exito']);
-}
-
-/* Alerta modificacion correcta */
-if (isset($_SESSION['exitoUpdate'])) {
-?>
-    <script>
-        Swal.fire(
-            'Exito!',
-            '<?php echo $_SESSION['exitoUpdate']; ?>',
-            'success'
-        )
-    </script>
-<?php
-    unset($_SESSION['exitoUpdate']);
 }
 
 /* Alerta eliminacion correcta */

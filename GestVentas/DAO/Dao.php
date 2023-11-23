@@ -13,4 +13,5 @@ class DAO
         $conexion = mysqli_connect($this->servidor, $this->usuario, $this->contraseña, $this->nombreBD);
         return $conexion;
     }
+   
 }
